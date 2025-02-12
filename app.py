@@ -35,6 +35,7 @@ def binary_to_hexadecimal(binary_number):
         hexa_decimal_value=int(chunk[0])*8+int(chunk[1])*4+int(chunk[2])*2+int(chunk[3])*1
         hexa_decimal_result+=str(hexa_decimal_value)
     print(hexa_decimal_value)
+    return(hexa_decimal_value)
         
 
 def binary_to_decimal(binary_number):
