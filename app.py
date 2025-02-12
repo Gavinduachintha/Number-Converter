@@ -19,12 +19,8 @@ def binary_to_octal(binary_number):
     print(octal_result)
 
 def binary_to_hexadecimal(binary_number):
-    numeric_values={10:'A',
-                    11:'B',
-                    12:'C',
-                    13:'D',
-                    14:'E',
-                    15:'F'}
+    numeric_values={10:'A',11:'B',12:'C',
+                    13:'D',14:'E',15:'F'}
     
     binary_number=str(binary_number)
     hexa_decimal_result=''
@@ -33,10 +29,13 @@ def binary_to_hexadecimal(binary_number):
     for i in range(0,len(binary_number),4):
         chunk = binary_number[i:i+4]
         hexa_decimal_value=int(chunk[0])*8+int(chunk[1])*4+int(chunk[2])*2+int(chunk[3])*1
-        hexa_decimal_result+=str(hexa_decimal_value)
-    print(hexa_decimal_value)
-    return(hexa_decimal_value)
-        
+        if hexa_decimal_value>=10:
+            hexa_decimal_result+=numeric_values[hexa_decimal_value]
+        else:
+            hexa_decimal_result+=str(hexa_decimal_value)
+    print(hexa_decimal_result)
+    return(hexa_decimal_result)
+    
 
 def binary_to_decimal(binary_number):
     binary_list=[]
